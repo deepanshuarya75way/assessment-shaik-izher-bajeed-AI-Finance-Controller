@@ -2,6 +2,12 @@
 
 ### AI-Powered Financial Reconciliation, Exception Investigation & Controlled Automation
 
+<p align="center">
+  <a href="https://ai-finance-controller-vert.vercel.app/">
+    <strong>🚀 Live Demo — AI Finance Controller</strong>
+  </a>
+</p>
+
 AI Finance Controller is an intelligent financial operations system designed to detect reconciliation exceptions, investigate them using AI, assess risk, and safely manage financial actions through a human-in-the-loop approval workflow.
 
 The project focuses on a key principle for financial automation:
@@ -10,15 +16,15 @@ The project focuses on a key principle for financial automation:
 
 ---
 
-## Overview
+## 📌 Overview
 
 Modern payment and financial systems process large volumes of transactions, payments, invoices, and settlements. Identifying discrepancies and investigating financial exceptions manually can be time-consuming and operationally expensive.
 
 **AI Finance Controller** provides an end-to-end workflow for managing these exceptions.
 
-The system combines deterministic financial reconciliation with AI-assisted investigation and controlled automation to help transform raw financial discrepancies into structured, actionable workflows.
+The system combines deterministic financial reconciliation with AI-assisted investigation and controlled automation to transform raw financial discrepancies into structured, actionable workflows.
 
-### Core capabilities
+### Core Capabilities
 
 - Automated financial reconciliation
 - Exception detection and classification
@@ -29,11 +35,11 @@ The system combines deterministic financial reconciliation with AI-assisted inve
 - Controlled action execution
 - Sandbox-based financial operations
 - Automatic execution verification
-- Analytics and operational monitoring
+- Financial analytics and operational monitoring
 
 ---
 
-# Problem Statement
+# 🎯 Problem Statement
 
 Financial operations teams frequently need to investigate issues such as:
 
@@ -48,45 +54,45 @@ A typical investigation may require manually identifying related records, analyz
 
 As transaction volume increases, this workflow becomes increasingly repetitive and difficult to manage efficiently.
 
+### Objective
+
 The objective of this project is to build an intelligent financial controller that can automate the investigation and workflow management process while maintaining appropriate controls over sensitive financial actions.
 
 ---
 
-# Our Approach
+# 💡 Our Approach
 
 The project follows a **controlled AI-assisted financial operations architecture**.
 
 Instead of allowing an AI model to directly perform financial operations, the system separates intelligence, decision-making, approval, execution, and verification into independent stages.
 
-```text
-Financial Data
-      ↓
-Validation & Normalization
-      ↓
-Reconciliation Engine
-      ↓
-Exception Detection
-      ↓
-AI Investigation
-      ↓
-Risk Assessment
-      ↓
-Controller Decision
-      ↓
-Human Approval
-      ↓
-Controlled Execution
-      ↓
-Automatic Verification
-```
+    Financial Data
+          ↓
+    Validation & Normalization
+          ↓
+    Reconciliation Engine
+          ↓
+    Exception Detection
+          ↓
+    AI Investigation
+          ↓
+    Risk Assessment
+          ↓
+    Controller Decision
+          ↓
+    Human Approval
+          ↓
+    Controlled Execution
+          ↓
+    Automatic Verification
 
 This architecture ensures that AI acts as an **investigation and recommendation layer**, while sensitive actions remain protected by deterministic controls and approval mechanisms.
 
 ---
 
-# Key Features
+# ⭐ Key Features
 
-## Financial Reconciliation
+## 1. Financial Reconciliation
 
 The reconciliation engine compares related financial records and identifies inconsistencies across payments, invoices, settlements, and transactions.
 
@@ -102,7 +108,7 @@ Detected issues are converted into structured exceptions that can be tracked thr
 
 ---
 
-## AI-Powered Investigation
+## 2. AI-Powered Investigation
 
 The AI investigation layer analyzes the available financial context associated with an exception.
 
@@ -117,7 +123,7 @@ This allows financial exceptions to move from simple discrepancy detection towar
 
 ---
 
-## Risk-Based Controller
+## 3. Risk-Based Controller
 
 The controller evaluates each exception and determines the appropriate workflow.
 
@@ -134,7 +140,7 @@ This creates a controlled separation between **AI recommendations** and **actual
 
 ---
 
-## Human-in-the-Loop Approval
+## 4. Human-in-the-Loop Approval
 
 Sensitive actions are protected through an approval workflow.
 
@@ -142,19 +148,17 @@ Actions that require review cannot proceed directly to execution.
 
 The workflow supports controlled states such as:
 
-```text
-PENDING_APPROVAL
-        ↓
-APPROVED
-        ↓
-EXECUTION_ALLOWED
-```
+    PENDING_APPROVAL
+            ↓
+        APPROVED
+            ↓
+    EXECUTION_ALLOWED
 
 This ensures that important financial actions remain under human supervision.
 
 ---
 
-## Controlled Sandbox Execution
+## 5. Controlled Sandbox Execution
 
 Approved actions are executed through a dedicated Finance Sandbox environment.
 
@@ -170,7 +174,7 @@ This allows the complete automation workflow to be tested safely, including:
 
 ---
 
-## Automatic Verification
+## 6. Automatic Verification
 
 Execution is not considered complete simply because an action request succeeds.
 
@@ -178,84 +182,81 @@ The system verifies the execution result and updates the workflow accordingly.
 
 A successful controlled workflow follows:
 
-```text
-PENDING_APPROVAL
-        ↓
-APPROVED
-        ↓
-SANDBOX_EXECUTED
-        ↓
-SANDBOX_VERIFIED
-```
+    PENDING_APPROVAL
+            ↓
+        APPROVED
+            ↓
+    SANDBOX_EXECUTED
+            ↓
+    SANDBOX_VERIFIED
 
 This provides a clear and traceable lifecycle for financial actions.
 
 ---
 
-# End-to-End Workflow
+# 🔄 End-to-End Workflow
 
-```text
-1. Financial records enter the system
-
-2. Data is validated and normalized
-
-3. The reconciliation engine compares related records
-
-4. Financial discrepancies are detected
-
-5. Exceptions are created and classified
-
-6. AI investigates the financial context
-
-7. The controller evaluates risk and proposes an action
-
-8. Sensitive actions require human approval
-
-9. Approved actions are executed in a controlled sandbox
-
-10. Execution results are automatically verified
-```
+    1. Financial records enter the system
+                ↓
+    2. Data is validated and normalized
+                ↓
+    3. Reconciliation engine compares related records
+                ↓
+    4. Financial discrepancies are detected
+                ↓
+    5. Exceptions are created and classified
+                ↓
+    6. AI investigates the financial context
+                ↓
+    7. Controller evaluates risk and proposes an action
+                ↓
+    8. Sensitive actions require human approval
+                ↓
+    9. Approved actions are executed in a controlled sandbox
+                ↓
+    10. Execution results are automatically verified
 
 ---
 
-# System Architecture
+# 🏗️ System Architecture
 
-```text
-                    ┌─────────────────────┐
-                    │    React Frontend   │
-                    │  Financial Control  │
-                    │      Dashboard      │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │    Backend API      │
-                    │       Flask         │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-        ┌────────────────────────────────────────┐
-        │          AI Finance Controller          │
-        │                                        │
-        │  Reconciliation Engine                 │
-        │  Exception Detection                   │
-        │  AI Investigation                      │
-        │  Risk Assessment                       │
-        │  Approval Engine                       │
-        │  Execution Engine                      │
-        └───────────────────┬────────────────────┘
-                            │
-                            ▼
-                  ┌───────────────────┐
-                  │ Finance Sandbox   │
-                  │ Controlled Actions│
-                  │ Verification      │
-                  └───────────────────┘
-```
+    ┌──────────────────────────────────────┐
+    │          React Frontend              │
+    │       Financial Control Dashboard    │
+    └──────────────────┬───────────────────┘
+                       │
+                       ▼
+    ┌──────────────────────────────────────┐
+    │            Backend API               │
+    │               Flask                 │
+    └──────────────────┬───────────────────┘
+                       │
+                       ▼
+    ┌──────────────────────────────────────┐
+    │       AI Finance Controller          │
+    │                                      │
+    │  • Reconciliation Engine             │
+    │  • Exception Detection               │
+    │  • AI Investigation                  │
+    │  • Risk Assessment                   │
+    │  • Approval Engine                   │
+    │  • Execution Engine                  │
+    └──────────────────┬───────────────────┘
+                       │
+                       ▼
+    ┌──────────────────────────────────────┐
+    │          Finance Sandbox             │
+    │                                      │
+    │  • Controlled Actions                │
+    │  • Execution                         │
+    │  • Verification                      │
+    └──────────────────────────────────────┘
+
+The architecture separates the user interface, API layer, AI investigation, controller logic, and controlled execution environment.
 
 ---
 
-# Application Screenshots
+# 🖥️ Application Screenshots
 
 ## Control Center
 
@@ -309,63 +310,61 @@ The Analytics Dashboard provides operational insights into financial exceptions,
 
 ---
 
-# Example Exception Workflow
+# 🧪 Example Exception Workflow
 
 Consider a payment that has been successfully recorded but does not have a corresponding settlement record.
 
-```text
-Payment Detected
-      ↓
-Settlement Record Missing
-      ↓
-Exception Created
-      ↓
-AI Investigation
-      ↓
-Recommended Action:
-VERIFY_SETTLEMENT
-      ↓
-Risk Assessment
-      ↓
-Human Approval Required
-      ↓
-Approved
-      ↓
-Sandbox Execution
-      ↓
-Automatic Verification
-```
+    Payment Detected
+          ↓
+    Settlement Record Missing
+          ↓
+    Exception Created
+          ↓
+    AI Investigation
+          ↓
+    Recommended Action:
+    VERIFY_SETTLEMENT
+          ↓
+    Risk Assessment
+          ↓
+    Human Approval Required
+          ↓
+    Approved
+          ↓
+    Sandbox Execution
+          ↓
+    Automatic Verification
 
 This demonstrates how the system converts a financial discrepancy into a controlled and traceable workflow.
 
 ---
 
-# Technology Stack
+# 🛠️ Technology Stack
 
-### Frontend
+## Frontend
 
 - React
 - Vite
 - JavaScript
 - CSS
 
-### Backend
+## Backend
 
 - Python
 - Flask
 - Flask-CORS
 
-### AI
+## AI
 
 - Google Gemini
 - Google GenAI SDK
 
-### Data Processing
+## Data Processing
 
 - Pandas
 - NumPy
 
-### Supporting Components
+## Supporting Components
 
 - Requests
 - Python-dotenv
@@ -373,53 +372,51 @@ This demonstrates how the system converts a financial discrepancy into a control
 
 ---
 
-# Project Structure
+# 📂 Project Structure
 
-```text
-AI-Finance-Controller/
-│
-├── frontend/                 # React application
-│
-├── src/
-│   ├── agents/               # AI investigation components
-│   ├── api/                  # Backend API
-│   ├── controller/           # Controller and workflow engines
-│   ├── data/                 # Data processing utilities
-│   ├── reconciliation/       # Financial reconciliation logic
-│   └── sandbox/              # Finance sandbox service
-│
-├── data/                     # Financial datasets
-├── tests/                    # Tests
-├── screenshots/              # Application screenshots
-│
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
+    AI-Finance-Controller/
+    │
+    ├── api/
+    │   └── index.py              # API entry point
+    │
+    ├── frontend/                 # React application
+    │
+    ├── src/
+    │   ├── agents/               # AI investigation components
+    │   ├── api/                  # Backend API components
+    │   ├── controller/           # Controller and workflow engines
+    │   ├── data/                 # Data processing utilities
+    │   ├── reconciliation/       # Financial reconciliation logic
+    │   └── sandbox/              # Finance sandbox service
+    │
+    ├── data/                     # Financial datasets
+    ├── screenshots/              # Application screenshots
+    │
+    ├── requirements.txt
+    ├── README.md
+    └── .gitignore
 
 ---
 
-# Safety and Control Model
+# 🔐 Safety and Control Model
 
 Financial automation requires stronger controls than ordinary application automation.
 
 This project separates the workflow into distinct layers:
 
-```text
-AI Intelligence
-      ↓
-Recommendation
-      ↓
-Risk Assessment
-      ↓
-Controller Decision
-      ↓
-Human Approval
-      ↓
-Controlled Execution
-      ↓
-Verification
-```
+    AI Intelligence
+          ↓
+    Recommendation
+          ↓
+    Risk Assessment
+          ↓
+    Controller Decision
+          ↓
+    Human Approval
+          ↓
+    Controlled Execution
+          ↓
+    Verification
 
 The AI model does not receive unrestricted authority to independently perform sensitive financial operations.
 
@@ -431,42 +428,41 @@ The system uses:
 - Controlled execution
 - Execution verification
 - Clear workflow states
+- Sandbox-based testing
 
 This architecture makes the system more suitable for exploring AI-assisted workflows in financial operations.
 
 ---
 
-# Why This Architecture?
+# 🧠 Why This Architecture?
 
 A financial AI system should not simply follow the pattern:
 
-```text
-AI → Decision → Execute
-```
+    AI → Decision → Execute
 
 Instead, this project implements:
 
-```text
-AI Investigation
-      ↓
-Recommendation
-      ↓
-Deterministic Controller
-      ↓
-Risk Controls
-      ↓
-Human Approval
-      ↓
-Controlled Execution
-      ↓
-Verification
-```
+    AI Investigation
+          ↓
+    Recommendation
+          ↓
+    Deterministic Controller
+          ↓
+    Risk Controls
+          ↓
+    Human Approval
+          ↓
+    Controlled Execution
+          ↓
+    Verification
 
 This separation provides better control, traceability, and safety when applying AI to financial workflows.
 
+The architecture is designed around the principle that **AI should assist financial operations rather than receive unrestricted authority over sensitive actions**.
+
 ---
 
-# What This Project Demonstrates
+# 📊 What This Project Demonstrates
 
 This project demonstrates practical experience with:
 
@@ -486,10 +482,12 @@ This project demonstrates practical experience with:
 - Sandbox environments
 - Automatic verification
 - Financial analytics dashboards
+- AI-assisted decision workflows
+- Responsible AI system design
 
 ---
 
-# Future Improvements
+# 🚀 Future Improvements
 
 Potential production-oriented improvements include:
 
@@ -499,17 +497,91 @@ Potential production-oriented improvements include:
 - Authentication and authorization
 - Role-based approval workflows
 - Multi-level approvals
-- Audit logging
+- Comprehensive audit logging
 - Advanced anomaly detection
 - Real-time notifications
 - Event-driven architecture
 - Docker containerization
-- Cloud deployment
+- Production-grade cloud infrastructure
 - Production monitoring and observability
+- Enhanced security controls
+- Scalable data processing
+- Advanced financial risk scoring
 
 ---
 
-# Disclaimer
+# 📈 Production Considerations
+
+For a production deployment, the system could be extended with:
+
+- Persistent databases for transaction and workflow state
+- Strong authentication and authorization
+- Role-based access control
+- Immutable audit trails
+- Secure secret management
+- API rate limiting
+- Input validation and sanitization
+- Monitoring and observability
+- Centralized logging
+- Failure recovery mechanisms
+- Scalable infrastructure
+- Stronger financial compliance controls
+
+These improvements would help transition the prototype architecture toward a production-oriented financial operations platform.
+
+---
+
+# 🔎 Key Design Principles
+
+### AI-Assisted, Not AI-Unrestricted
+
+AI is used for investigation, analysis, and recommendations rather than unrestricted financial execution.
+
+### Human Oversight
+
+Sensitive actions can require human approval before execution.
+
+### Deterministic Controls
+
+Critical workflow decisions are separated from probabilistic AI output.
+
+### Controlled Execution
+
+Financial operations are performed through a sandbox environment rather than directly against real financial systems.
+
+### Verification
+
+Execution results are verified before the workflow is considered complete.
+
+### Traceability
+
+Workflow states provide a clear lifecycle from exception detection to investigation, approval, execution, and verification.
+
+---
+
+# 🎓 Learning & Technical Value
+
+This project brings together multiple areas of modern software and AI engineering:
+
+- Generative AI
+- AI-assisted financial operations
+- Prompt-based investigation
+- REST APIs
+- Full-stack development
+- Data processing
+- Workflow automation
+- Risk-based decision systems
+- Human-in-the-loop systems
+- Sandbox architecture
+- Verification workflows
+- Dashboard development
+- Responsible AI design
+
+The project demonstrates how these technologies can be combined into a practical end-to-end application rather than using AI as an isolated feature.
+
+---
+
+# ⚠️ Disclaimer
 
 This project is an educational and portfolio implementation of an AI-assisted financial operations workflow.
 
@@ -517,10 +589,24 @@ The Finance Sandbox simulates controlled financial operations and does not perfo
 
 The project demonstrates how AI investigation, deterministic controls, human approval, controlled execution, and verification can be combined to build safer financial automation workflows.
 
+This project should not be considered a production financial system or financial advice platform.
+
 ---
 
-## Author
+# 👨‍💻 Author
 
 **Izher Bajeed**
 
 AI / Machine Learning / Generative AI Developer
+
+---
+
+# 🚀 Live Application
+
+**Try the application:**
+
+https://ai-finance-controller-vert.vercel.app/
+
+---
+
+⭐ If you find this project interesting, feel free to explore the repository and the live application.
