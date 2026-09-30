@@ -1,4 +1,6 @@
 import os
+import json
+import time
 
 import pandas as pd
 from src.api.database import supabase
@@ -6,9 +8,9 @@ from src.api.database import supabase
 from flask import (
     Blueprint,
     jsonify,
-    request
+    request,
+    Response
 )
-
 
 # ============================================================
 # AI FINANCE CONTROLLER
@@ -2807,3 +2809,15 @@ def ai_investigation(
             "error": str(error)
 
         }), 500
+
+@api.route("/events")
+def events():
+    def stream():
+        while True:
+            yield"data:refresh\n\n"
+            time.sleep(3)
+
+    return Response(
+        stream(),
+        mimetype="text/event-stream"
+    )

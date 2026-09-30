@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import "./ExceptionQueue.css";
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL;
+const API_BASE = import.meta.env.VITE_API_BASE_URL||"/api";
 const PAGE_SIZE = 20;
 
 
@@ -92,6 +92,15 @@ function ExceptionQueue() {
   useEffect(() => {
     loadExceptions();
   }, [page, severity, issue]);
+
+  useEffect(()=>{
+    const event=new EventSource(`${API_BASE}/events`);
+
+    event.onmessage=() =>{
+      loadExceptions();
+    };
+    return () => event.close();
+  },[page,severity,issue]);
 
 
   async function loadExceptions() {

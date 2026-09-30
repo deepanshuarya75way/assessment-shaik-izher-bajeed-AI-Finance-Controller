@@ -19,10 +19,22 @@ function App() {
   useEffect(() => {
     loadDashboard();
   }, []);
+  useEffect(() =>{
+    const event=new EventSource(`${API_BASE}/events`);
 
-  async function loadDashboard() {
+    event.onmessage=() =>{
+    loadDashboard(true);
+    };
+    return () => event.close();
+
+  },[]);
+
+  
+
+
+  async function loadDashboard(silent = false) {
     try {
-      setLoading(true);
+      if(!silent) setLoading(true);
       setError("");
 
       const response = await fetch(
